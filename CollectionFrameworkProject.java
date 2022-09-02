@@ -1,3 +1,7 @@
+// This is a program which has several commands through which we create , delete, view and save the ACCOUNT details of an individual.
+//The files are saved in .txt file and created using HASHMAP
+//I made this project while I was learning JAVA COLLECTION FRAMEWORK.
+//It contains SERIALIZABLE INTERFACE through which we read and store objects into a local file.
 import java.util.*;
 import java.io.*;
 
@@ -28,7 +32,8 @@ public class CollectionFrameworkProject {
 
 		Account acc = null;
 		HashMap<String, Account> hm = new HashMap<>();
-
+//Here we are using try-catch becuase for the first time there will be no pre stored data as .txt file,
+//so to run it once we have to use try-catch, otherwise we will have checked exception.
 		 try
 	        {
 	        FileInputStream fis=new FileInputStream("Acc.txt");
@@ -48,13 +53,13 @@ public class CollectionFrameworkProject {
 	        }
 	        catch(Exception e)
 	        {
-	            
+	           // we don't need to handle anything 
 	        }
 	      
 	        FileOutputStream fos=new FileOutputStream("Acc.txt");
 	        ObjectOutputStream oos=new ObjectOutputStream(fos);
 	        
-	       // System.out.println("Menu");
+	      
 	        
 	        int choice;
 	        String accno,name;
@@ -73,7 +78,7 @@ public class CollectionFrameworkProject {
 			System.out.print("ENTER YOUR CHOICE :- ");
 			choice = sc.nextInt();
 
-			  sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+			  sc.skip("(\r\n|[\n\r\u2028\u2029\u0085])?"); //this helps to skip the special characters
 
 			  switch(choice)
 	            {
